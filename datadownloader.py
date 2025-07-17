@@ -21,6 +21,9 @@ www.stefanstavrianos.eu/en
 """
     print(banner.strip(), end="\n\n")
 
+def show_exit_message():
+    print("Thank you for using the Data Downloader.")
+    print("Wishing you accurate data and insightful research!\n")
 
 def download_data():
     clear_screen()
@@ -117,13 +120,16 @@ def handle_incomplete_config():
         print("(1) Main Menu")
         print("(2) Exit")
         choice = input("\nChoose option: ").strip()
-        if choice == "1":
-            return
-        elif choice == "2":
-            print("Exiting.")
-            exit()
-        clear_screen()
-        print("Configuration incomplete. Please set all required fields.\n")
+        match choice:
+            case "1":
+                return
+            case "2":
+                clear_screen()
+                show_exit_message()
+                exit()
+            case _:
+                clear_screen()
+                print("Configuration incomplete. Please set all required fields.\n")
 
 def show_menu():
     while True:
@@ -166,8 +172,7 @@ def show_menu():
                 set_location()
             case "5":
                 clear_screen()
-                print("Thank you for using the Data Downloader.")
-                print("Wishing you accurate data and insightful research!\n")
+                show_exit_message()
                 break
             case "START":
                 if configuration_complete():
@@ -183,5 +188,4 @@ if __name__ == "__main__":
         show_menu()
     except KeyboardInterrupt:
         clear_screen()
-        print("Thank you for using the Data Downloader.")
-        print("Wishing you accurate data and insightful research!\n")
+        show_exit_message()
