@@ -19,7 +19,7 @@ University of Patras, GR
 www.stefanstavrianos.eu/en
 {'*' * len(dscr)}
 """
-    print(banner.strip(), end="\n\n")
+    print(banner.strip(), end="\n")
 
 def show_exit_message():
     print("Thank you for using the Data Downloader.")
