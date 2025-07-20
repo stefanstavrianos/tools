@@ -1,12 +1,14 @@
 import os
 import yfinance as yf
 from datetime import datetime
-
+ 
 tickers = []
 start_date = None
 end_date = None
 interval = None
 save_dir = None
+
+ 
 
 def clear_screen():
     os.system("clear" if os.name == "posix" else "cls")
@@ -109,7 +111,7 @@ def set_location():
             break
         print("\nPath not valid.")
         input("Press ENTER to try again...")
-
+        
 def configuration_complete():
     return all([tickers, start_date, end_date, interval, save_dir])
 
