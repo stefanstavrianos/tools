@@ -13,15 +13,15 @@ save_dir = None
 def clear_screen():
     os.system("clear" if os.name == "posix" else "cls")
     dscr = "Risk Management & Financial Econometrics "
-    banner = f"""
-{'*' * len(dscr)}
-Stefanos Stavrianos, PhD Candidate
-{dscr}
-University of Patras, GR
-www.stefanstavrianos.eu/en
-{'*' * len(dscr)}
-"""
-    print(banner.strip(), end="\n")
+    line = "*" * len(dscr)
+    
+    print(line)
+    print("Stefanos Stavrianos, PhD Candidate")
+    print(dscr)
+    print("University of Patras, GR")
+    print("www.stefanstavrianos.eu/en")
+    print(line)
+    print()
 
 def show_exit_message():
     print("Thank you for using the Data Downloader.")
